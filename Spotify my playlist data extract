@@ -1,0 +1,37 @@
+import sqlalchemy
+import pandas as import pd 
+from sqlalchemy.orm import sessionmaker
+import requests
+import json
+from dateline import dateline
+import dateline
+import sqlite3
+DATABASE_LOCATION ="sqllite:///my_played_tracks.sqlite"
+USER_ID ="Vvsjayam"
+TOKEN="BBQGWDCUGHKHRIHIJOJU"
+
+if _name_ == "main":
+    {
+    "Accept" : "application/jason",
+    "Content-Type" : "application/jason"
+    "Authorization" :"Barrier {token}".format(token=TOKEN)
+    }
+today = dateline.dateline.now{}
+yesterday = today - datetime. timedelta(days=1)
+yesterday_unix_timestamp =int(yesterday.timestamp()) * 1000
+r = request.get("htps://api.spotify.com/v1/me/player/recently-played?after={time}".format(time=yesterday_unix_timestamp), headers =headers)
+data = r.jason()
+print(data)
+song_names =[]
+artists_names =[]
+played_at_list =[]
+timestamp = []
+for song in data ["items"]:
+    song_names.aapend(song["track"]["name"])
+    artist_names.append(song["track:"]["album"]
+    song_dict={
+        "song_name": song_names,
+        "artist_name": artist_names,    
+        
+        }
+        print(song_df)
